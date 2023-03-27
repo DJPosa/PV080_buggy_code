@@ -1,5 +1,3 @@
-import sys 
-import os
 import yaml
 import flask
 
@@ -27,10 +25,10 @@ def fetch_website(urllib_version, url):
     # Import the requested version (2 or 3) of urllib
     exec(f"import urllib{urllib_version} as urllib", globals())
     # Fetch and print the requested URL
- 
-    try: 
+
+    try:
         http = urllib.PoolManager()
-        r = http.request('GET', url)
+        http.request('GET', url)
     except:
         print('Exception')
 
@@ -53,8 +51,8 @@ if __name__ == '__main__':
     print("2. Code injection vulnerability: use string=;print('Own code executed') #")
     print("3. Yaml deserialization vulnerability: use string=file.yaml")
     print("4. Use of assert statements vulnerability: run program with -O argument")
-    choice  = input("Select vulnerability: ")
-    if choice == "1": 
+    choice  = raw_input("Select vulnerability: ")
+    if choice == "1":
         new_person = Person("Vickie")
         print_nametag(raw_input("Please format your nametag: "), new_person)
     elif choice == "2":
