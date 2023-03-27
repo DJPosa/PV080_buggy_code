@@ -24,9 +24,9 @@ def print_nametag(format_string, person):
 
 def fetch_website(urllib_version, url):
     # Import the requested version (2 or 3) of urllib
-    if(urllib_version == 2)
+    if(urllib_version == 2):
         import urllib{2} as urllib
-    elif(urllib_version == 3)
+    elif(urllib_version == 3):
         import urllib{3} as urllib
     else
         return
@@ -48,8 +48,11 @@ def load_yaml(filename):
 
 def authenticate(password):
     # Assert that the password is correct
-    assert password == "Iloveyou", "Invalid password!"
-    print("Successfully authenticated!")
+    # assert password == "Iloveyou", "Invalid password!"
+    if(password == "Iloveyou"):
+        print("Invalid password!")
+    else:
+        print("Successfully authenticated!")
 
 
 if __name__ == '__main__':
